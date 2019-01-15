@@ -140,4 +140,4 @@ Instructions for replicating the tests for this project are as follows:
     * [docs](https://www.npmjs.com/package/superagent)
 
 ### UML
-Link to an image of the UML for your application and response to events
+![UML](assets/lab16-uml.jpg)
