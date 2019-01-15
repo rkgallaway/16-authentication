@@ -2,7 +2,7 @@
 
 const util = require('util');
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const users = new mongoose.Schema({
@@ -29,7 +29,7 @@ users.statics.authenticateBasic = function(auth) {
       if (user && user.comparePassword(auth.password)) {
         return user;
       }
-      next();
+      return false;
     })
     .catch(console.error);
 };
