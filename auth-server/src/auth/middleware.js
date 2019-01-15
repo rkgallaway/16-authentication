@@ -1,13 +1,11 @@
 'use strict';
 
+const util = require('util');
 const User = require('./users-model.js');
-
+// console.log(`User: ${util.inspect(User)}`);
 module.exports = (req, res, next) => {
-
   try {
-
     let [authType, encodedString] = req.headers.authorization.split(/\s+/);
-
     // BASIC Auth  ... Authorization:Basic ZnJlZDpzYW1wbGU=
 
     switch(authType.toLowerCase()) {
@@ -21,11 +19,11 @@ module.exports = (req, res, next) => {
     return _authError();
   }
 
-  function _authBasic() {
-    let base64Buffer = Buffer.from(authString,'base64'); // <Buffer 01 02...>
+  function _authBasic(str) {
+    let base64Buffer = Buffer.from(str,'base64'); // <Buffer 01 02...>
     let bufferString = base64Buffer.toString(); // john:mysecret
     let [username,password] = bufferString.split(':');  // variables username="john" and password="mysecret"
-    let auth = [username,password];  // {username:"john", password:"mysecret"}
+    let auth = {username,password};  // {username:"john", password:"mysecret"}
 
     return User.authenticateBasic(auth)
       .then( user => _authenticate(user) );
@@ -33,6 +31,8 @@ module.exports = (req, res, next) => {
 
   function _authenticate(user) {
     if ( user ) {
+      req.user = user;
+      req.token = user.generateToken();
       next();
     }
     else {

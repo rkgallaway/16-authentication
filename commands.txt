@@ -1,0 +1,11 @@
+
+
+echo '{"username":"john", "password":"johnny"}' | http post :3000/signup
+
+http :3000/
+
+
+echo '{"username":"john", "password":"johnny"}' | http post :3000/signin
+
+
+http post :3000/signin -a john:johnny

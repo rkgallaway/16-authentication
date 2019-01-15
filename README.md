@@ -10,9 +10,9 @@
 [![Build Status](https://www.travis-ci.com/rkgallaway/16-authentication.svg?branch=master)](https://www.travis-ci.com/rkgallaway/16-authentication)
 
 * [repo](https://github.com/rkgallaway/16-authentication)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
+* [travis](https://www.travis-ci.com/rkgallaway/16-authentication)
+* [back-end](https://lab16-authentication-rg-fl.herokuapp.com) (when applicable)
+* [front-end](localhost:3000)
 
 #### Documentation
 * [swagger](http://xyz.com) (API assignments only)
@@ -43,7 +43,7 @@
 ### Setup
 #### `.env` requirements
 * `PORT` - Port defined in ENV
-* `MONGODB_URI` - URL to the running mongo instance/db
+* `MONGODB_URI` - mongodb://heroku_zw9r2x3d:ken4i81qlbunmhhguu1a6r9lif@ds151180.mlab.com:51180/heroku_zw9r2x3d
 
 #### Running the app
 * `npm i` to install dependencies

@@ -8,6 +8,7 @@ router.get('/books/:id', handleGetOne);
 
 // Route Handlers
 function handleGetAll(req, res, next) {
+  console.log('LOG: Im in the handleGetAll books route');
   let books = {
     count: 3,
     results: [
@@ -20,6 +21,7 @@ function handleGetAll(req, res, next) {
 }
 
 function handleGetOne(req, res, next) {
+  console.log('LOG: Im in the handleGetOne books route');
   let book = {
     title:'Moby Dick',
   };
