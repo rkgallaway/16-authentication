@@ -3,8 +3,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/books', handleGetAll);
-router.get('/books/:id', handleGetOne);
+router.get('/books', auth, handleGetAll);
+router.get('/books/:id', auth, handleGetOne);
 
 // Route Handlers
 function handleGetAll(req, res, next) {
@@ -12,8 +12,8 @@ function handleGetAll(req, res, next) {
   let books = {
     count: 3,
     results: [
-      { title:'Moby Dick' },
-      { title:'Little Women' },
+      { title: 'Moby Dick' },
+      { title: 'Little Women' },
       { title: 'Eloquent Javascript' },
     ],
   };
