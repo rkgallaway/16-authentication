@@ -5,6 +5,7 @@
   "main": "./auth-server/index.js",
   "scripts": {
     "start": "node index.js",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json",
     "watch": "nodemon index.js",
     "test-watch": "jest --watchAll",
     "test": "jest"

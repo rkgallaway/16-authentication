@@ -19,6 +19,12 @@ module.exports = (req, res, next) => {
     return _authError();
   }
 
+  /**
+   * Basic Authentication
+   *
+   * @param {*} str
+   * @returns authenticated user
+   */
   function _authBasic(str) {
     let base64Buffer = Buffer.from(str,'base64'); // <Buffer 01 02...>
     let bufferString = base64Buffer.toString(); // john:mysecret
@@ -29,6 +35,11 @@ module.exports = (req, res, next) => {
       .then( user => _authenticate(user) );
   }
 
+  /**
+   * Authenticates user and assigns token
+   *
+   * @param {*} user
+   */
   function _authenticate(user) {
     if ( user ) {
       req.user = user;
