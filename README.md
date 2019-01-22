@@ -11,7 +11,7 @@
 
 * [repo](https://github.com/rkgallaway/16-authentication)
 * [travis](https://www.travis-ci.com/rkgallaway/16-authentication)
-* [back-end](https://lab16-authentication-rg-fl.herokuapp.com) (when applicable)
+* [back-end](https://lab16-authentication-rg-fl.herokuapp.com)
 * [front-end](localhost:3000)
 
 #### Documentation
